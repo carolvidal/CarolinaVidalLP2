@@ -4,28 +4,35 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace ConsoleApplication1
+namespace ExercicioRevisao
 {
     class Program
     {
+        struct Carro
+        {
+            public string modelo;
+            public int pot;
+            public double km;
+        }
+
         static void Main(string[] args)
         {
-            string modelo, final;
-            int pot, carros;
-            double km;
+            string final;
+            int carros;
+            Carro Carro1;
             Console.WriteLine("Insira o número de carros");
             carros = Convert.ToInt32(Console.ReadLine());
 
             for (int i = 0; i < carros; i++)
             {
                 Console.WriteLine("Insira o seu modelo");
-                modelo = Console.ReadLine();
+                Carro1.modelo = Console.ReadLine();
                 Console.WriteLine("Insira a quilometragem: ");
-                km = Convert.ToDouble(Console.ReadLine());
+                Carro1.km = Convert.ToDouble(Console.ReadLine());
                 Console.WriteLine("Insira a potência: ");
-                pot = Convert.ToInt32(Console.ReadLine());
+                Carro1.pot = Convert.ToInt32(Console.ReadLine());
 
-                final = Sub(modelo, km, pot);
+                final = Sub(Carro1.modelo, Carro1.km, Carro1.pot);
 
                 Console.WriteLine(final);
 
