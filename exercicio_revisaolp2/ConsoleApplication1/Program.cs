@@ -10,47 +10,62 @@ namespace ConsoleApplication1
     {
         static void Main(string[] args)
         {
-            string modelo, modsaida,potsaida;
-            int km,pot,carros;
-            Console.WriteLine("Insira o numero de carros");
+            string modelo, final;
+            int pot, carros;
+            double km;
+            Console.WriteLine("Insira o número de carros");
             carros = Convert.ToInt32(Console.ReadLine());
 
-            for (int i = 0; i < carros; i++ ){
-             Console.WriteLine("insira o seu modelo ");
-             modelo= Console.ReadLine();
-             Console.WriteLine(" Insira a quilometragem :");
-             km = Convert.ToInt32(Console.ReadLine());
-             Console.WriteLine("Insira a potência :");
-             pot = Convert.ToInt32(Console.ReadLine());
+            for (int i = 0; i < carros; i++)
+            {
+                Console.WriteLine("Insira o seu modelo");
+                modelo = Console.ReadLine();
+                Console.WriteLine("Insira a quilometragem: ");
+                km = Convert.ToDouble(Console.ReadLine());
+                Console.WriteLine("Insira a potência: ");
+                pot = Convert.ToInt32(Console.ReadLine());
 
-             
-             if (km <= 5000)
-             {
-                 modsaida = "novo";
-             }
-             else if (km>5000 && km<=30000)
-             {
-                 modsaida = "seminovo";
-             }
-             else
-             {
-                 modsaida = "velho";
-             }
+                final = Sub(modelo, km, pot);
 
-             if (pot > 200)
-             {
-                 potsaida = "potente";
-             }
-             else if (pot >= 120 && pot <= 200)
-             {
-                 potsaida = "forte";
-             }
-             else
-                 potsaida = "popular";
+                Console.WriteLine(final);
 
-
-             Console.WriteLine("{0} - {1} - {2}", modelo, modsaida, potsaida);
             }
         }
+
+            static string Sub(string modelo, double km, int pot)
+            {
+                string modsaida, potsaida, final;
+
+                if (km <= 5000)
+                {
+                    modsaida = "Novo";
+                }
+                else if (km>5000 && km <= 30000)
+                {
+                 modsaida = "Seminovo";
+                }
+                else
+                {
+                    modsaida = "Velho";
+                }
+                if (pot > 200)
+                {
+                    potsaida = "Potente";
+                }
+                else if (pot >= 120 && pot <= 200)
+                {
+                    potsaida = "Forte";
+                }
+                else
+                    potsaida = "Popular";
+                   
+                final = String.Format("{0} - {1} - {2}", modelo, modsaida, potsaida);
+
+                return final;
+            }
+        
+        }
+
     }
-}
+
+
