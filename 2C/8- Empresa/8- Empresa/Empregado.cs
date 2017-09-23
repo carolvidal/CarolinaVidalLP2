@@ -8,12 +8,9 @@ namespace _8__Empresa
 {
     class Empregado : Funcionário
     {
-        private int dataEntrada { get; }
+        public int dataEntrada { get; set; }
 
-        public Empregado(string nome, string cpf, int numR)
-        {
-
-        }
+        public Empregado(string n, string c, int nr) : base(n, c, nr) { }
 
     }
 }

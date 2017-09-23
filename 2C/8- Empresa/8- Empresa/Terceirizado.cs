@@ -8,9 +8,11 @@ namespace _8__Empresa
 {
     class Terceirizado : Funcionário
     {
+        public string empresaMatriz { get; set; }
 
-        private int dataEntrada { get; }
-
-        private string empresaMatriz { get; }
+        public Terceirizado(string n, string c, int nr, string emp) : base(n, c, nr)
+        {
+            empresaMatriz = emp;
+        }
     }
 }

@@ -8,16 +8,18 @@ namespace _8__Empresa
 {
     abstract class Funcionário
     {
-        protected int numR { get; private set; }
-        protected string nome { get; set; }
-        protected string cpf
+        public int numeroRegistro { get; set; }
+        public string nome { get; set; }
+        protected string cpf;
+
+        public string Cpf
         {
             get
             {
                 return cpf;
             }
 
-            set
+            private set
             {
                 if (value.Length == 11)
                     cpf = value;
@@ -27,5 +29,10 @@ namespace _8__Empresa
         protected string email { get; set; }
         protected double salario { get; }
 
+        public Funcionário(string n, string c, int nr)
+        {
+            nome = n;
+            numeroRegistro = nr;
+        }
     }
 }

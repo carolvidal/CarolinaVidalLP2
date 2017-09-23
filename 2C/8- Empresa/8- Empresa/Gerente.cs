@@ -9,11 +9,11 @@ namespace _8__Empresa
     class Gerente
     {
 
-        private double bonus { get; }
+        public double bonus { get; private set; }
 
-        public Gerente(string nome, string cpf, int numR, int bônus)
+        public Gerente(string n, string c, int nr, double b) : base(n, c, nr)
         {
-
+            bonus = b;
         }
     }
 }
