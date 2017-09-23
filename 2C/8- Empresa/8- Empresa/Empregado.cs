@@ -6,37 +6,14 @@ using System.Threading.Tasks;
 
 namespace _8__Empresa
 {
-    class Empregado
+    class Empregado : Funcionário
     {
-        public int numR { get; private set; }
-        public string nome { get; set; }
-        private string cpf;
-        public string Cpf
-       {
-             get
-             {
-                 return cpf;
-             }
- 
-             set
-             {
-                 if (value.Length == 11)
-                     cpf = value;
-             }
-        }
-        public string email { get; set; }
-        public double sal { get; private set; }
-
         private int dataEntrada { get; }
 
-        public Empregado(string n, string c, int nr)
+        public Empregado(string nome, string cpf, int numR)
         {
-            nome = n;
-            cpf = c;
-            numR = nr;
+
         }
-
-
 
     }
 }
